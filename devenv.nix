@@ -4,7 +4,11 @@
     packages = [
         pkgs.pyright
         pkgs.sqlite
-        pkgs.pkg-config # new for future rust puproses
+        pkgs.pkg-config
+
+        # Rust: adaptador de debug (fornece o binário "codelldb")
+        pkgs.lldb
+        pkgs.vscode-extensions.vadimcn.vscode-lldb.adapter
     ];
 
     languages.python = {
@@ -48,7 +52,7 @@
         '';
     };
 
-    languages.rust = { # For rust
+    languages.rust = {
         enable = true;
         components = [
             "rustc"
@@ -59,9 +63,8 @@
         ];
     };
 
-
     enterShell = ''
       echo "$(python --version) — venv ativo"
-      echo "$(rust --version) — toolchain rust ativa"
+      echo "$(rustc --version) — toolchain rust ativa"
     '';
 }
