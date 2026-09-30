@@ -25,6 +25,7 @@
             pytest
             questionary
             typer
+            click
 
             # JPNotebook
             ipykernel
