@@ -24,6 +24,7 @@
             pandas
             pytest
             questionary
+            typer
 
             # JPNotebook
             ipykernel
