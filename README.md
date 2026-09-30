@@ -21,3 +21,6 @@
 ## 11. Donations (maybe)
 
 ## 13. Stack (???)
+- Python v3.13.14
+### CLI:
+- Pyhon Click v8.3.3
