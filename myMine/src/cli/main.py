@@ -1,55 +1,57 @@
 import click
 
-# Functions to have
-## Start
-### A function to start the main server
-## Open (or call start if down)
-### A function to open the server
-## Kill
-### A function to kill the server
 
-# Possible functions to have
-## It's up ?
-'''
-python click basic body
-
-@click.command() # Functions decorated with this becomes a callable script
-@click.option('--count', default=1, help='Number of greetings.')
-@click.option('--name', prompt='Your name', help='The person to greet')
-def hello(count, name):
+def startServer():
     """
-    Simple program that greets NAME for a total of COUNT times
-
+    Safely starts the main server
     """
-    for x in range(count):
-        click.echo(f"Hello {name}!")
-'''
+    ...
 
 
-def start(): ...
+def verifyServer():
+    """
+    Verify if server is up and running
+    """
+    ...
+
+
+def safelyKillServer():
+    """
+    Safely stop and killing the server
+    """
+    ...
+
+
+@click.group()
+def cli():
+    """
+    Bundle all the commands together
+    """
+    pass
 
 
 @click.command()
 def bee():
-    # Checks if process is runing
-    # If not:
-    # call start then open
-    # If is:
-    # open
-    ...
+    serverStatus = verifyServer()
+    if serverStatus:
+        click.echo("Opening mine!")
+    else:
+        click.echo("Starting server")
+        startServer()
+        click.echo("Opening mine!")
 
 
 @click.command()
-def killbee():
-    # Checks if process is runing
-    # If is:
-    # kill the process
-    # If not:
-    # do nothing
-    ...
+def kbee():
+    click.echo("Killing Server")
+    safelyKillServer()
+    click.echo("Server killed")
+
+
+cli.add_command(bee)
+cli.add_command(kbee)
 
 
 if __name__ == "__main__":
     """this is a temp format for development purpose. After the CLI is finished and goes to production this will be replaced by entry points"""
-    bee()
-    killbee()
+    cli()
