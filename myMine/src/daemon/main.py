@@ -2,14 +2,12 @@ import argparse
 import logging
 import os
 import signal
-
-# import time
 from time import sleep
 
 running = True  # Runs the main loop
 
 
-def interrupt_handler(signum, frame):
+def interrupt_sig_handler(signum, frame):
     """
     So handlers can process signals as I need or want
     """
@@ -19,7 +17,7 @@ def interrupt_handler(signum, frame):
 
 
 # binding my function to the signal SIGINT
-signal.signal(signal.SIGINT, interrupt_handler)
+signal.signal(signal.SIGINT, interrupt_sig_handler)
 
 # Main Loop
 while running:
