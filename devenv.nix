@@ -45,6 +45,10 @@
             isort
             debugpy
             nltk
+
+            # Comunication
+            grpcio
+            grpcio-tools
         ]);
 
         venv.enable = true;
