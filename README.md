@@ -7,7 +7,8 @@
 - This project is in the early stages of development, but the goal is a tool that allows user to centralize their scatter data and extract valuable insights from it. With the mission of being local-first user owned like obsidian is.
 
 ## 2. Some kind of visual representation and demonstration of the project
-<img width="1620" height="621" alt="beeHive_diagram drawio" src="https://github.com/user-attachments/assets/d8dc49dd-dd14-476d-bddc-245f711dc724" />
+<img width="1630" height="621" alt="beeHive_diagram drawio" src="https://github.com/user-attachments/assets/7cd86f75-5a69-48ff-8ecd-af8c77fa2e2e" />
+
 
 
 
